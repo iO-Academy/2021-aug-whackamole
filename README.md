@@ -1,2 +1,3 @@
-# year-cohort-projectName
-project template repo
+# 2021 August Agile Aardvarks Whack-a-Zombie
+
+JavaScript game.
