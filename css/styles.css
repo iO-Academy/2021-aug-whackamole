@@ -6,10 +6,14 @@
 }
 
 body {
-    background-color: black;
+    background-color: #0D065E;
+    color: #FFFFFF;
     font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    height: 100vh;
     margin: 0;
     padding: 0;
+    width: 100vw;
 }
 
 h1 {
@@ -18,8 +22,11 @@ h1 {
 }
 
 a {
+    color: #FFFFFF;
     text-decoration: none;
 }
+
+/* Landing Page Styling */
 
 .container {
     align-items: center;
@@ -30,17 +37,13 @@ a {
 }
 
 .header {
-    align-items: center;
-    background-color: grey;
+    color: #880808;
     display: flex;
-    flex-direction: column;
     padding: 1rem;
-    width: 50vw;
 }
 
 .instructions {
     align-items: center;
-    background-color: aquamarine;
     display: flex;
     flex-direction: column;
     padding: 1rem;
@@ -48,8 +51,69 @@ a {
 }
 
 .launch {
-    background-color: red;
+    background-color: #880808;
     border-radius: 150px;
     font-size: 2rem;
     padding: 1rem 2rem;
+}
+
+.launch:hover {
+    background-color: #000000;
+  }
+
+.background {
+    align-items: center;
+    background-color: #053D09;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    width: 100vw;
+}
+
+footer {
+    padding: 1rem;
+}
+
+/* Game Page Styling */
+
+.game-container {
+    display: grid;
+    grid-template-rows: 25% 75%;
+    height: 100%;
+}
+
+.nav-bar {
+    align-items: center;
+    display: flex;
+    height: 20%;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+.stats {
+    display: flex;
+}
+
+.nav-item {
+    padding: 1rem;
+}
+
+.links {
+    display: flex;
+}
+
+.game-area {
+    background-color: #053D09;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 3rem;
+}
+
+.grid-item {
+    background-color: grey;
+    height: 200px;
+    margin: 2rem 6rem;
+    text-align: center;
+    width: 200px;
 }
