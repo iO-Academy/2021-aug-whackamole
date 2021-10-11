@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    font-family: 'Oswald', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Creepster', cursive;
+    font-size: 55px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-evenly;
+}
+
+.header {
+    align-items: center;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 50vw;
+}
+
+.instructions {
+    align-items: center;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 35vw;
+}
+
+.launch {
+    background-color: red;
+    border-radius: 150px;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+}
