@@ -76,7 +76,7 @@ footer {
     padding: 1rem;
 }
 
- /*Game Page Styling */
+/* Game Page Styling */
 
 button {
     cursor: pointer;
@@ -106,7 +106,7 @@ button {
 }
 
 .home-button {
-    grid-column: 4 /5;
+    grid-column: 4 / 5;
     justify-self: center;
 }
 
@@ -118,11 +118,11 @@ button {
 }
 
 i:hover {
-    color: lightgrey;
+    color: #D3D3D3;
 }
 
 .home-icon:hover {
-    color: lightgrey;
+    color: #D3D3D3;
 }
 
 .game-area {

@@ -5,7 +5,6 @@ $(document).ready(function() {
     $(".window-close").hide();
     $(".info-circle").show();
 
-
     $(".instruction-button").on('click', function () {
         $(".instruction-content").toggle({ direction: "left" });
         $(".window-close").toggle();
