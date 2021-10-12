@@ -108,12 +108,30 @@ footer {
     display: grid;
     grid-template-columns: auto auto auto;
     padding: 3rem;
+    justify-items: center;
+    align-items: center;
 }
 
 .grid-item {
-    background-color: grey;
+    /*background-color: grey;*/
     height: 200px;
     margin: 2rem 6rem;
     text-align: center;
     width: 200px;
+    position: relative;
 }
+
+.gravestone {
+    height: 12rem;
+    width: auto;
+    position: absolute;
+    z-index: 10;
+}
+
+.zombie-sprite {
+    /*background-image: url("../images/zombie1.png");*/
+    z-index: 2;
+    height: 10rem;
+    width: auto;
+}
+
