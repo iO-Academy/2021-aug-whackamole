@@ -33,7 +33,6 @@ const updateScoreBoard = () => {
  */
 function pickRandom() {
     let randomArray = [
-
         false,
         false,
         false,
