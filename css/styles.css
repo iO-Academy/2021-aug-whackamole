@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0D065E;
+    color: #FFFFFF;
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+}
+
+h1 {
+    font-family: 'Creepster', cursive;
+    font-size: 55px;
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+/* Landing Page Styling */
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-evenly;
+}
+
+.header {
+    color: #880808;
+    display: flex;
+    padding: 1rem;
+}
+
+.instructions {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 35vw;
+}
+
+.launch {
+    background-color: #880808;
+    border-radius: 150px;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+}
+
+.launch:hover {
+    background-color: #000000;
+  }
+
+.background {
+    align-items: center;
+    background-color: #053D09;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    width: 100vw;
+}
+
+footer {
+    padding: 1rem;
+}
+
+/* Game Page Styling */
+
+.game-container {
+    display: grid;
+    grid-template-rows: 25% 75%;
+    height: 100%;
+}
+
+.nav-bar {
+    align-items: center;
+    display: flex;
+    height: 20%;
+    justify-content: space-between;
+    width: 100vw;
+}
+
+.stats {
+    display: flex;
+}
+
+.nav-item {
+    padding: 1rem;
+}
+
+.links {
+    display: flex;
+}
+
+.game-area {
+    background-color: #053D09;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 3rem;
+    justify-items: center;
+    align-items: center;
+}
+
+.grid-item {
+    /*background-color: grey;*/
+    height: 200px;
+    margin: 2rem 6rem;
+    text-align: center;
+    width: 200px;
+    position: relative;
+}
+
+.gravestone {
+    height: 12rem;
+    width: auto;
+    position: absolute;
+    z-index: 10;
+}
+
+.zombie-sprite {
+    /*background-image: url("../images/zombie1.png");*/
+    z-index: 2;
+    height: 10rem;
+    width: auto;
+}
+
