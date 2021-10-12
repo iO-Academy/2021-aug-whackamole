@@ -77,11 +77,11 @@ footer {
 
 /* Game Page Styling */
 
-.game-container {
-    display: grid;
-    grid-template-rows: 25% 75%;
-    height: 100%;
-}
+/*.game-container {*/
+/*    display: grid;*/
+/*    grid-template-rows: 25% 75%;*/
+/*    height: 100%;*/
+/*}*/
 
 .nav-bar {
     align-items: center;
@@ -101,6 +101,15 @@ footer {
 
 .links {
     display: flex;
+}
+
+.instruction-menu {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.instruction-button {
+    cursor: pointer;
 }
 
 .game-area {
