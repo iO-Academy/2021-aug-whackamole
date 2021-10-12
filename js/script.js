@@ -2,8 +2,6 @@
  *
  * Hide zombie on click.
  */
-const allZombies = document.querySelectorAll('.zombie-sprite');
-
 $('.zombie-sprite').on('click', function(){
     $(this).css('display', 'none');
     addToScore();
@@ -46,3 +44,16 @@ const randomSelection = randomNum();
 function randomNum() {
     return Math.floor(Math.random() * 6);
 }
+
+//Instructions pop-out icon in game.html:
+$(document).ready(function() {
+    $(".instruction-content").css('display','none');
+    $(".window-close").hide();
+    $(".info-circle").show();
+
+    $(".instruction-button").on('click', function () {
+        $(".instruction-content").toggle({ direction: "left" });
+        $(".window-close").toggle();
+        $(".info-circle").toggle();
+    });
+});
