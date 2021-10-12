@@ -77,11 +77,11 @@ footer {
 
 /* Game Page Styling */
 
-.game-container {
-    display: grid;
-    grid-template-rows: 25% 75%;
-    height: 100%;
-}
+/*.game-container {*/
+/*    display: grid;*/
+/*    grid-template-rows: 25% 75%;*/
+/*    height: 100%;*/
+/*}*/
 
 .nav-bar {
     align-items: center;
@@ -103,17 +103,44 @@ footer {
     display: flex;
 }
 
+.instruction-menu {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.instruction-button {
+    cursor: pointer;
+}
+
 .game-area {
     background-color: #053D09;
     display: grid;
     grid-template-columns: auto auto auto;
     padding: 3rem;
+    justify-items: center;
+    align-items: center;
 }
 
 .grid-item {
-    background-color: grey;
+    /*background-color: grey;*/
     height: 200px;
     margin: 2rem 6rem;
     text-align: center;
     width: 200px;
+    position: relative;
 }
+
+.gravestone {
+    height: 12rem;
+    width: auto;
+    position: absolute;
+    z-index: 10;
+}
+
+.zombie-sprite {
+    /*background-image: url("../images/zombie1.png");*/
+    z-index: 2;
+    height: 10rem;
+    width: auto;
+}
+
