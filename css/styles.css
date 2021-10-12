@@ -52,6 +52,7 @@ a {
 
 .launch {
     background-color: #880808;
+    color: #FFFFFF;
     border-radius: 150px;
     font-size: 2rem;
     padding: 1rem 2rem;
@@ -75,54 +76,66 @@ footer {
     padding: 1rem;
 }
 
-/* Game Page Styling */
+ /*Game Page Styling */
 
-/*.game-container {*/
-/*    display: grid;*/
-/*    grid-template-rows: 25% 75%;*/
-/*    height: 100%;*/
-/*}*/
+button {
+    cursor: pointer;
+}
 
 .nav-bar {
-    align-items: center;
-    display: flex;
-    height: 20%;
-    justify-content: space-between;
+    height: 20vh;
     width: 100vw;
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr 1fr;
+    align-items: center;
 }
 
 .stats {
-    display: flex;
+    justify-self: center;
 }
 
-.nav-item {
-    padding: 1rem;
+.instruction-content {
+    font-size: 1rem;
+    font-weight: lighter;
+    justify-self: right;
 }
 
-.links {
-    display: flex;
+.instruction-buttons {
+    grid-column: 3 / 4;
+    justify-self: center;
 }
 
-.instruction-menu {
-    display: flex;
-    flex-direction: row-reverse;
+.home-button {
+    grid-column: 4 /5;
+    justify-self: center;
 }
 
-.instruction-button {
-    cursor: pointer;
+.instruction-button,
+.home-icon {
+    background: none;
+    border-style: none;
+    color: #FFFFFF;
+}
+
+i:hover {
+    color: lightgrey;
+}
+
+.home-icon:hover {
+    color: lightgrey;
 }
 
 .game-area {
     background-color: #053D09;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
     padding: 3rem;
     justify-items: center;
     align-items: center;
+    height: 80vh;
 }
 
 .grid-item {
-    /*background-color: grey;*/
     height: 200px;
     margin: 2rem 6rem;
     text-align: center;
@@ -133,14 +146,13 @@ footer {
 .gravestone {
     height: 12rem;
     width: auto;
-    position: absolute;
-    z-index: 10;
 }
 
 .zombie-sprite {
-    /*background-image: url("../images/zombie1.png");*/
     z-index: 2;
     height: 10rem;
     width: auto;
+    position: absolute;
+    left: 2.5rem;
 }
 
