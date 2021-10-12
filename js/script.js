@@ -1,5 +1,9 @@
+/**
+ *
+ * Hide zombie on click.
+ */
+const allZombies = document.querySelectorAll('.zombie-sprite');
 
-// Function to hide zombies on click.
 $('.zombie-sprite').on('click', function(){
     $(this).css('display', 'none');
     addToScore();
@@ -22,4 +26,23 @@ const addToScore = () => {
  */
 const updateScoreBoard = () => {
     scoreBoard.textContent = score.toString();
+}
+
+/**
+ * Random zombie selector
+ */
+function pickRandom() {
+    let randomArray = [
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+    ];
+    return randomArray[randomSelection] = true;
+}
+const randomSelection = randomNum();
+function randomNum() {
+    return Math.floor(Math.random() * 6);
 }
