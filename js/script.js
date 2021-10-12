@@ -1,5 +1,4 @@
 // Function to hide zombies on click.
-
 $('.zombie-sprite').on('click', function(){
     $(this).css('display', 'none');
     addToScore();
