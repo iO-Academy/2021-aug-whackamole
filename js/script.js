@@ -73,6 +73,7 @@ function popupZombie() {
  */
 function startGame() {
     resetGame();
+    timer = setInterval(updateTimer, 1000);
     setInterval(popupZombie, 1500);
 }
 
@@ -89,3 +90,21 @@ $(document).ready(function () {
     });
 });
 
+// 30 second timer
+let timer;
+let timeLeft = 30; // seconds
+
+// decrements time left by one if time left is greater than zero.
+
+function updateTimer() {
+    timeLeft = timeLeft - 1;
+    if (timeLeft >= 0)
+        $('#timer').html(timeLeft);
+    else {
+        endGame();
+    }
+}
+
+function endGame() {
+    cancelInterval(timer);
+}
