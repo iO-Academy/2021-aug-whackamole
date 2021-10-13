@@ -1,8 +1,3 @@
-// Triggers startGame() function on page load:
-
-$(document).ready(function() {
-    startGame();
-});
 
 /**
  * Hide zombie on click.
@@ -57,7 +52,7 @@ function popupZombie() {
     // check if not already up
     if (zombie.style.display === 'none') {
 
-        zombie.style.display = 'block';
+        zombie.style.display = 'initial';
 
         setTimeout(function () {
             zombie.style.display = 'none';
@@ -107,4 +102,19 @@ function updateTimer() {
 function endGame() {
     clearInterval(timer);
     clearInterval(zombieAppear);
+    showEndModal();
 }
+
+// Function to show modal at game end.
+function showEndModal() {
+    const endModal = document.querySelector('#end-modal');
+    const endModalScore = document.querySelector('#end-modal-score');
+    endModal.style.display = 'block';
+    endModalScore.innerText = score;
+
+}
+// Triggers startGame() function on page load:
+
+$(document).ready(function() {
+    startGame();
+});
