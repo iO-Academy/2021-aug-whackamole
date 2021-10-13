@@ -1,8 +1,19 @@
+
+// Triggers game to start on page load:
+
+$(document).ready(function() {
+    startGame();
+});
+
+
 /**
  *
  * Hide zombie on click.
  */
-$('.zombie-sprite').on('click', function(){
+
+const allZombies = document.querySelectorAll('.zombie-sprite');
+
+$('.zombie-sprite').on('click', function () {
     $(this).css('display', 'none');
     addToScore();
 });
@@ -27,32 +38,53 @@ const updateScoreBoard = () => {
 }
 
 /**
- * Random zombie selector
+ * Resets the game to its start conditions
  */
-function pickRandom() {
-    let randomArray = [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
-    ];
-    return randomArray[randomSelection] = true;
+const resetGame = () => {
+    // reset score
+    score = 0;
+
+    // reset all zombies to hidden
+    allZombies.forEach(function (zombie) {
+        zombie.style.display = 'none';
+    })
 }
-const randomSelection = randomNum();
-function randomNum() {
-    return Math.floor(Math.random() * 6);
+
+/**
+ * Pops up a random zombie, with a timeout to disappear
+ */
+function popupZombie() {
+    const randomZombie = Math.floor(Math.random() * 6);
+    const zombie = allZombies[randomZombie];
+
+    // check if not already up
+    if (zombie.style.display === 'none') {
+
+        zombie.style.display = 'block';
+
+        setTimeout(function () {
+            zombie.style.display = 'none';
+        }, 2000);
+    }
+}
+
+/**
+ * Starting point that triggers the game
+ */
+function startGame() {
+    resetGame();
+    timer = setInterval(updateTimer, 1000);
+    setInterval(popupZombie, 1500);
 }
 
 //Instructions pop-out icon in game.html:
-$(document).ready(function() {
-    $(".instruction-content").css('display','none');
+$(document).ready(function () {
+    $(".instruction-content").css('display', 'none');
     $(".window-close").hide();
     $(".info-circle").show();
 
     $(".instruction-button").on('click', function () {
-        $(".instruction-content").toggle({ direction: "left" });
+        $(".instruction-content").toggle({direction: "left"});
         $(".window-close").toggle();
         $(".info-circle").toggle();
     });
@@ -73,11 +105,6 @@ function updateTimer() {
     }
 }
 
-function startGame() {
-    timer = setInterval(updateTimer, 1000); // 1000 = 1second
-}
-
 function endGame() {
     cancelInterval(timer);
 }
-
