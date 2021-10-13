@@ -52,7 +52,7 @@ function popupZombie() {
     // check if not already up
     if (zombie.style.display === 'none') {
 
-        zombie.style.display = 'block';
+        zombie.style.display = 'initial';
 
         setTimeout(function () {
             zombie.style.display = 'none';
