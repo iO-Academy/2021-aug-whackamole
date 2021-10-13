@@ -88,6 +88,7 @@ const handleLaunchGame = (ev) => {
     // GAME BEGINS:
     window.location.href = "game.html";
     // Call game functions
+    startGame();
 
 }
 launchGame.addEventListener('click', handleLaunchGame);
