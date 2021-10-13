@@ -1,13 +1,10 @@
-
-// Triggers game to start on page load:
+// Triggers startGame() function on page load:
 
 $(document).ready(function() {
     startGame();
 });
 
-
 /**
- *
  * Hide zombie on click.
  */
 
@@ -68,15 +65,6 @@ function popupZombie() {
     }
 }
 
-/**
- * Starting point that triggers the game
- */
-function startGame() {
-    resetGame();
-    timer = setInterval(updateTimer, 1000);
-    setInterval(popupZombie, 1500);
-}
-
 //Instructions pop-out icon in game.html:
 $(document).ready(function () {
     $(".instruction-content").css('display', 'none');
@@ -94,6 +82,17 @@ $(document).ready(function () {
 let timer;
 let timeLeft = 30; // seconds
 
+let zombieAppear;
+
+/**
+ * Start Game Function
+ */
+ function startGame() {
+    resetGame();
+    timer = setInterval(updateTimer, 1000);
+    zombieAppear = setInterval(popupZombie, 1500);
+}
+
 // decrements time left by one if time left is greater than zero.
 
 function updateTimer() {
@@ -106,5 +105,6 @@ function updateTimer() {
 }
 
 function endGame() {
-    cancelInterval(timer);
+    clearInterval(timer);
+    clearInterval(zombieAppear);
 }
