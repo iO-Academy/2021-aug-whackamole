@@ -30,6 +30,19 @@ const updateScoreBoard = () => {
 }
 
 /**
+ * Resets the game to its start conditions
+ */
+const resetGame = () => {
+    // reset score
+    score = 0;
+
+    // reset all zombies to hidden
+    allZombies.forEach(function (zombie) {
+        zombie.style.display = 'none';
+    })
+}
+
+/**
  * Pops up a random zombie, with a timeout to disappear
  */
 function popupZombie() {
@@ -51,6 +64,7 @@ function popupZombie() {
  * Starting point that triggers the game
  */
 const startGame = () => {
+    resetGame();
     setInterval(popupZombie, 1500);
 }
 
