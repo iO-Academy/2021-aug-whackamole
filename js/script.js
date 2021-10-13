@@ -80,3 +80,14 @@ $(document).ready(function () {
         $(".info-circle").toggle();
     });
 });
+
+// Function to start game:
+const launchGame = document.querySelector('.launch');
+const handleLaunchGame = (ev) => {
+
+    // GAME BEGINS:
+    window.location.href = "game.html";
+    // Call game functions
+
+}
+launchGame.addEventListener('click', handleLaunchGame);
