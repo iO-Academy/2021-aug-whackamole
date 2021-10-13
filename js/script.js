@@ -1,3 +1,11 @@
+
+// Triggers game to start on page load:
+
+$(document).ready(function() {
+    startGame();
+});
+
+
 /**
  *
  * Hide zombie on click.
@@ -63,7 +71,7 @@ function popupZombie() {
 /**
  * Starting point that triggers the game
  */
-const startGame = () => {
+function startGame() {
     resetGame();
     setInterval(popupZombie, 1500);
 }
@@ -81,14 +89,3 @@ $(document).ready(function () {
     });
 });
 
-// Function to start game:
-const launchGame = document.querySelector('.launch');
-const handleLaunchGame = (ev) => {
-
-    // GAME BEGINS:
-    window.location.href = "game.html";
-    // Call game functions
-    startGame();
-
-}
-launchGame.addEventListener('click', handleLaunchGame);
