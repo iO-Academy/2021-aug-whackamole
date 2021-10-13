@@ -4,7 +4,7 @@
  */
 const allZombies = document.querySelectorAll('.zombie-sprite');
 
-$('.zombie-sprite').on('click', function(){
+$('.zombie-sprite').on('click', function () {
     $(this).css('display', 'none');
     addToScore();
 });
@@ -29,20 +29,26 @@ const updateScoreBoard = () => {
 }
 
 /**
- * Random zombie selector
+ * Pops up a random zombie, with a timeout to disappear
  */
-function pickRandom() {
-    let randomArray = [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
-    ];
-    return randomArray[randomSelection] = true;
+function popupZombie() {
+    const randomZombie = Math.floor(Math.random() * 6);
+    const zombie = allZombies[randomZombie];
+
+    // check if not already up
+    if (zombie.style.display === 'none') {
+
+        zombie.style.display = 'block';
+
+        setTimeout(function () {
+            zombie.style.display = 'none';
+        }, 2000);
+    }
 }
-const randomSelection = randomNum();
-function randomNum() {
-    return Math.floor(Math.random() * 6);
+
+/**
+ * Starting point that triggers the game
+ */
+const startGame = () => {
+    setInterval(popupZombie, 1500);
 }
