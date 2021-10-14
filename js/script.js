@@ -160,7 +160,7 @@ $(document).ready(function(ev) {
     const mode = url.searchParams.get("m");
 
     // adjust difficulty parameters
-    timeoutSpeed = (mode == 'hard') ? 1000 : 2000;
+    timeoutSpeed = (mode == 'hard') ? 1100 : 2000;
     appearSpeed = (mode == 'hard') ? 1000 : 1500;
 
     showStartModal();
