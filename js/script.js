@@ -4,7 +4,7 @@
 let score = 0;
 const scoreBoard = document.querySelector('#scoreCount');
 let timer;
-let timeLeft = 30; // seconds
+let timeLeft = 3; // seconds
 let zombieAppear;
 let countdown;
 let countdownTime = 6;
@@ -104,11 +104,11 @@ function updateTimer() {
 /**
  * Clean up intervals and show end modal.
  */
-// function endGame() {
-//     clearInterval(timer);
-//     clearInterval(zombieAppear);
-//     showEndModal();
-// }
+function endGame() {
+    clearInterval(timer);
+    clearInterval(zombieAppear);
+    showEndModal();
+}
 
 /**
  * Decrements time left by one if time left is greater than zero.
@@ -128,11 +128,12 @@ function updateCountdown() {
 /**
  * Function to show modal with game start countdown.
  */
-// function showStartModal() {
-//     const startModal = document.querySelector('#start-modal');
-//     startModal.style.display = 'block';
-//     countdown = setInterval(updateCountdown, 1000);
-// }
+function showStartModal() {
+    const startModal = document.querySelector('#start-modal');
+    startModal.style.display = 'block';
+    countdown = setInterval(updateCountdown, 1000);
+    resetGame();
+}
 
 /**
  * Function to show modal at game end.
@@ -140,12 +141,16 @@ function updateCountdown() {
 function showEndModal() {
     const endModal = document.querySelector('#end-modal');
     const endModalScore = document.querySelector('#end-modal-score');
+    const endModalMessage = document.querySelector('#end-modal-message');
     endModal.style.display = 'block';
+    if (score == 0) {
+        endModalMessage.innerText = 'You died! Dare to try again? ';
+    };
     endModalScore.innerText = score;
 }
 
 /**
- * Triggers startGame() function on page load:
+ * Triggers showStartModal() function on page load:
  */
 $(document).ready(function() {
     showStartModal();

@@ -16,20 +16,22 @@
         <div id="start-modal">
             <div class="modalicons">
                 <div class="start-modal-content">
-                    <p id="start-modal-countdown"></p>
+                    <p id="start-modal-countdown">5</p>
                 </div>
             </div>
         </div>
         <div id="end-modal">
             <div class="modalicons">
                 <div class="end-modal-content" >
-                    <div class="home-button">
-                        <button class="home-icon" id="modalhome"><a href="index.html"><i class="fas fa-home"></i></a></button>
+                    <p id="end-modal-message">You survived! Your score is <span id="end-modal-score"></span></p>
+                    <div class="restart-buttons">
+                        <div class="home-button">
+                            <button class="home-icon" id="modalhome"><a href="index.html"><i class="fas fa-home"></i></a></button>
+                        </div>
+                        <div class="home-button">
+                            <button class="home-icon" id="modalrestart"><a href="game.html"><i class="fas fa-redo"></i></a></button>
+                        </div>
                     </div>
-                    <div class="home-button">
-                        <button class="home-icon" id="modalrestart"><a href="game.html"><i class="fas fa-redo"></i></a></button>
-                    </div>
-                    <p>You have finished the game! Your score is <span id="end-modal-score"></span>.</p>
                 </div>
             </div>
         </div>
@@ -46,7 +48,6 @@
                 </div>
             </div>
             <div class="instruction-content">
-                <h3>How to play</h3>
                 <p>Zombies will rise from the dead,</p>
                 <p>Use your tool to whack them on the head!</p>
                 <p>You have 30 seconds on the clock,</p>

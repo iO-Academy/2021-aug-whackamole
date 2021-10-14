@@ -20,11 +20,13 @@ body {
 
 h1 {
     font-family: 'Creepster', cursive;
-    font-size: 6rem;
+    font-size: 8rem;
+    text-shadow: 7px 7px #000000;
 }
 
 h2 {
     font-family: 'Creepster', cursive;
+    text-shadow: 5px 5px #000000;
 }
 
 h3 {
@@ -151,7 +153,7 @@ button {
 
 .instruction-content p {
     font-size: 1rem;
-    color: #CCCCCC;
+    color: #880808;
     margin: 0;
 }
 
@@ -235,7 +237,16 @@ i:hover {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 50%; /* Could be more or less, depending on screen size */
+    font-size: 3rem;
+}
+
+.end-modal-content p {
+    font-size: 3rem;
+}
+
+span {
+    font-size: 3rem;
 }
 
 #start-modal {
@@ -247,19 +258,27 @@ i:hover {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: #000000; /* Fallback color */
+    background-color: #00000050; /* Fallback color */
 }
 
 .start-modal-content {
     background-color: #000000;
-    color: #FFFFFF;
+    color: #880808;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 50%; /* Could be more or less, depending on screen size */
     font-family: 'Creepster', cursive;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+}
+
+.start-modal-content p {
+    font-size: 5rem;
+}
+
+.restart-buttons {
+    display: flex;
 }
 
 .modalicons, #modalhome, #modalrestart {
