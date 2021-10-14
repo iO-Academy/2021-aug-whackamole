@@ -1,5 +1,5 @@
 /**
- * Define score and timer vars.
+ * Define score, timer and sound effect vars.
  */
 let score = 0;
 const scoreBoard = document.querySelector('#scoreCount');
@@ -8,6 +8,8 @@ let timeLeft = 30; // seconds
 let zombieAppear;
 let countdown;
 let countdownTime = 6;
+let hitSound = new sound("sounds/Splat.mp3");
+let zombieSound = new sound("sounds/zombie02.mp3");
 
 /**
  * Hide zombie on click.
@@ -15,6 +17,7 @@ let countdownTime = 6;
 const allZombies = document.querySelectorAll('.zombie-sprite');
 
 $('.zombie-sprite').on('click', function () {
+    hitSound.play();
     $(this).css('display', 'none');
     addToScore();
 });
@@ -57,6 +60,7 @@ function popupZombie() {
     // check if not already up
     if (zombie.style.display === 'none') {
 
+        zombieSound.play();
         zombie.style.display = 'initial';
 
         setTimeout(function () {
@@ -104,11 +108,11 @@ function updateTimer() {
 /**
  * Clean up intervals and show end modal.
  */
-// function endGame() {
-//     clearInterval(timer);
-//     clearInterval(zombieAppear);
-//     showEndModal();
-// }
+function endGame() {
+    clearInterval(timer);
+    clearInterval(zombieAppear);
+    showEndModal();
+}
 
 /**
  * Decrements time left by one if time left is greater than zero.
@@ -128,11 +132,11 @@ function updateCountdown() {
 /**
  * Function to show modal with game start countdown.
  */
-// function showStartModal() {
-//     const startModal = document.querySelector('#start-modal');
-//     startModal.style.display = 'block';
-//     countdown = setInterval(updateCountdown, 1000);
-// }
+function showStartModal() {
+    const startModal = document.querySelector('#start-modal');
+    startModal.style.display = 'block';
+    countdown = setInterval(updateCountdown, 1000);
+}
 
 /**
  * Function to show modal at game end.
@@ -150,3 +154,21 @@ function showEndModal() {
 $(document).ready(function() {
     showStartModal();
 });
+
+/**
+ * Function to play sound effects:
+ */
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }
+}
