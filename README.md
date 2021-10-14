@@ -1,4 +1,4 @@
-# 2021 August Agile Aardvarks Whack-a-Zombie
+# 2021 August Agile Aardvarks Zap-a-Zombie
 
 JavaScript game.
 

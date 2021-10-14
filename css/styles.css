@@ -1,34 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
 
 * {
     box-sizing: border-box;
+    font-size: 16px;
 }
 
 body {
     background-color: #0D065E;
     color: #FFFFFF;
-    font-family: 'Oswald', sans-serif;
-    font-size: 26px;
+    font-family: 'IM Fell English SC', serif;
     height: 100vh;
     margin: 0;
     padding: 0;
     width: 100vw;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 h1 {
     font-family: 'Creepster', cursive;
-    font-size: 55px;
+    font-size: 8rem;
+    text-shadow: 7px 7px #000000;
+}
+
+h2 {
+    font-family: 'Creepster', cursive;
+    text-shadow: 5px 5px #000000;
+}
+
+h3 {
+    margin: 0 0 0.25rem;
+    color: #CCCCCC;
 }
 
 a {
-    color: #FFFFFF;
+    color: #CCCCCC;
     text-decoration: none;
 }
 
 /* Landing Page Styling */
 
-.container {
+.splash {
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -39,27 +52,52 @@ a {
 .header {
     color: #880808;
     display: flex;
-    padding: 1rem;
+}
+
+.landing-area {
+    background-image: url("../images/graveyard.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    padding: 30vh 10vw 3vh;
+    justify-items: center;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+    color: #880808;
 }
 
 .instructions {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    width: 35vw;
+    grid-column: 1 / 2;
+    color: #CCCCCC;
 }
 
-.launch {
+.instructions p {
+    margin: 0;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.game-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.launch-buttons {
     background-color: #880808;
-    color: #FFFFFF;
+    color: #CCCCCC;
     border-radius: 150px;
     font-size: 2rem;
     padding: 1rem 2rem;
+    font-family: 'Creepster', cursive;
 }
 
-.launch:hover {
-    background-color: #000000;
+.launch-buttons:hover {
+    color: #FEBD59;
   }
 
 .background {
@@ -74,12 +112,16 @@ a {
 
 footer {
     padding: 1rem;
+    grid-column: 1 / -1;
+    align-self: end;
 }
 
 /* Game Page Styling */
 
 button {
     cursor: pointer;
+    border: none;
+    outline: none;
 }
 
 .nav-bar {
@@ -90,14 +132,29 @@ button {
     align-items: center;
 }
 
+.nav-item,
+.nav-score {
+    display: flex;
+}
+
 .stats {
     justify-self: center;
+    font-family: 'Creepster', cursive;
+    color: #880808;
+}
+
+.stats-text {
+    font-size: 2rem;
 }
 
 .instruction-content {
-    font-size: 1rem;
-    font-weight: lighter;
     justify-self: right;
+}
+
+.instruction-content p {
+    font-size: 1rem;
+    color: #880808;
+    margin: 0;
 }
 
 .instruction-buttons {
@@ -117,29 +174,35 @@ button {
     color: #FFFFFF;
 }
 
+i {
+    font-size: 2rem;
+    color: #CCCCCC;
+}
+
 i:hover {
-    color: #D3D3D3;
+    color: #880808;
 }
 
 .home-icon:hover {
-    color: #D3D3D3;
+    color: #880808;
 }
 
 .game-area {
-    background-color: #053D09;
+    background-image: url("../images/graveyard.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 3rem;
     justify-items: center;
     align-items: center;
     height: 80vh;
+    color: #880808;
+    cursor: url('../assets/cursor/spade.png'), auto;
 }
 
 .grid-item {
-    height: 200px;
     margin: 2rem 6rem;
     text-align: center;
-    width: 200px;
     position: relative;
 }
 
@@ -148,13 +211,13 @@ i:hover {
     width: auto;
 }
 
-
 .zombie-sprite {
     z-index: 2;
     height: 10rem;
     width: auto;
     position: absolute;
-    left: 2.5rem;
+    left: 4rem;
+    top: 3rem;
 }
 
 #end-modal {
@@ -166,16 +229,25 @@ i:hover {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: #000000; /* Fallback color */
+    background-color: #00000050; /* Fallback color */
 }
 
 .end-modal-content {
     background-color: #000000;
-    color: #FFFFFF;
+    color: #880808;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 50%; /* Could be more or less, depending on screen size */
+    font-size: 3rem;
+}
+
+.end-modal-content p {
+    font-size: 3rem;
+}
+
+span {
+    font-size: 3rem;
 }
 
 #start-modal {
@@ -187,16 +259,27 @@ i:hover {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: #000000; /* Fallback color */
+    background-color: #00000050; /* Fallback color */
 }
 
 .start-modal-content {
     background-color: #000000;
-    color: #FFFFFF;
+    color: #880808;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 50%; /* Could be more or less, depending on screen size */
+    font-family: 'Creepster', cursive;
+    display: flex;
+    justify-content: center;
+}
+
+.start-modal-content p {
+    font-size: 5rem;
+}
+
+.restart-buttons {
+    display: flex;
 }
 
 .modalicons, #modalhome, #modalrestart {

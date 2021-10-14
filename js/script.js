@@ -132,6 +132,7 @@ function showStartModal() {
     const startModal = document.querySelector('#start-modal');
     startModal.style.display = 'block';
     countdown = setInterval(updateCountdown, 1000);
+    resetGame();
 }
 
 /**
@@ -140,12 +141,16 @@ function showStartModal() {
 function showEndModal() {
     const endModal = document.querySelector('#end-modal');
     const endModalScore = document.querySelector('#end-modal-score');
+    const endModalMessage = document.querySelector('#end-modal-message');
     endModal.style.display = 'block';
+    if (score == 0) {
+        endModalMessage.innerText = 'You died! Dare to try again? ';
+    };
     endModalScore.innerText = score;
 }
 
 /**
- * Triggers startGame() function on page load:
+ * Triggers showStartModal() function on page load:
  */
 $(document).ready(function() {
     showStartModal();

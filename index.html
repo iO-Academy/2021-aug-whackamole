@@ -3,31 +3,36 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Zap-A-Zombie</title>
+        <title>Night Of The Living Dev</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/jpg" href="images/icon.png"/>
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/styles.css">
         <script defer src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <script defer src="js/script.js"></script>
     </head>
     <body>
-        <div class="container">
+        <div class="splash">
             <div class="header">
-                <h1>Zap-A-Zombie</h1>
+                <h1>Night Of The Living Dev</h1>
             </div>
-            <div class="background">
-                <div class="instructions">
-                    <h2>Instructions</h2>
-                    <ol>
-                        <h3>How to play:</h3>
-                        <li>Zombies will rise from the dead,</li>
-                        <li>Use your tool to whack them on the head!</li>
-                        <li>You have 30 seconds on the clock,</li>
-                        <li>To make the zombie apocalypse stop!</li>
+            <div class="landing-area">
+                    <div class="instructions">
+                        <p>Zombies will rise from the dead,</p>
+                        <p>Use your tool to whack them on the head!</p>
+                        <p>You have 30 seconds on the clock,</p>
+                        <p>To make the zombie apocalypse stop!</p>
+                        <br>
                         <p>Good luck!</p>
-                    </ol>
+                    </div>
+                <div class="game-buttons">
+                    <a href="game.html?m=easy">
+                        <button class="launch-buttons play">Play</button>
+                    </a>
+                    <a href="game.html?m=hard">
+                        <button class="launch-buttons nightmare">Nightmare Mode</button>
+                    </a>
                 </div>
-                <a href="game.html"><button class="launch">Launch Game</button></a>
                 <footer>&copy; Agile Aardvarks 2021</footer>
             </div>
         </div>
