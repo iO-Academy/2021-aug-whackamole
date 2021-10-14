@@ -1,16 +1,19 @@
 /**
- * Define vars and constants.
+ * Define score and timer vars.
  */
+let score = 0;
+const scoreBoard = document.querySelector('#scoreCount');
 let timer;
 let timeLeft = 30; // seconds
 let zombieAppear;
-let score = 0;
-const allZombies = document.querySelectorAll('.zombie-sprite');
-const scoreBoard = document.querySelector('#scoreCount');
+let countdown;
+let countdownTime = 6;
 
 /**
  * Hide zombie on click.
  */
+const allZombies = document.querySelectorAll('.zombie-sprite');
+
 $('.zombie-sprite').on('click', function () {
     $(this).css('display', 'none');
     addToScore();
@@ -63,7 +66,7 @@ function popupZombie() {
 }
 
 /**
- * Instructions pop-out icon in game.html:
+ * Instructions pop-out icon in game.html
  */
 $(document).ready(function () {
     $(".instruction-content").css('display', 'none');
@@ -99,7 +102,7 @@ function updateTimer() {
 }
 
 /**
- * Clear intervals and show end modal.
+ * Clean up intervals and show end modal.
  */
 function endGame() {
     clearInterval(timer);
@@ -108,18 +111,47 @@ function endGame() {
 }
 
 /**
- * Show end modal with score.
+ * Decrements time left by one if time left is greater than zero.
+ */
+function updateCountdown() {
+    countdownTime = countdownTime - 1;
+    if (countdownTime >= 1)
+        $('#start-modal-countdown').html(countdownTime);
+    else {
+        clearInterval(countdown);
+        const startModal = document.querySelector('#start-modal');
+        startModal.style.display = 'none';
+        startGame();
+    }
+}
+
+/**
+ * Function to show modal with game start countdown.
+ */
+function showStartModal() {
+    const startModal = document.querySelector('#start-modal');
+    startModal.style.display = 'block';
+    countdown = setInterval(updateCountdown, 1000);
+    resetGame();
+}
+
+/**
+ * Function to show modal at game end.
  */
 function showEndModal() {
     const endModal = document.querySelector('#end-modal');
     const endModalScore = document.querySelector('#end-modal-score');
+    const endModalMessage = document.querySelector('#end-modal-message');
     endModal.style.display = 'block';
+    if (score == 0) {
+        endModalMessage.innerText = 'You died! Dare to try again? ';
+    };
     endModalScore.innerText = score;
 }
 
 /**
- * Triggers startGame() function on page load:
+ * Triggers showStartModal() function on page load:
  */
 $(document).ready(function() {
-    startGame();
+    showStartModal();
 });

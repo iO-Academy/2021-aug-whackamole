@@ -3,8 +3,9 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Zap-A-Zombie</title>
+        <title>Night Of The Living Dev</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/jpg" href="images/icon.png"/>
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
         <link rel="stylesheet" href="css/styles.css">
@@ -12,39 +13,45 @@
         <script defer src="js/script.js"></script>
     </head>
     <body>
+        <div id="start-modal">
+            <div class="modalicons">
+                <div class="start-modal-content">
+                    <p id="start-modal-countdown">5</p>
+                </div>
+            </div>
+        </div>
         <div id="end-modal">
             <div class="modalicons">
                 <div class="end-modal-content" >
-                    <div class="home-button">
-                        <button class="home-icon" id="modalhome"><a href="index.html"><i class="fas fa-home"></i></a></button>
+                    <p id="end-modal-message">You survived! Your score is <span id="end-modal-score"></span></p>
+                    <div class="restart-buttons">
+                        <div class="home-button">
+                            <button class="home-icon" id="modalhome"><a href="index.html"><i class="fas fa-home"></i></a></button>
+                        </div>
+                        <div class="home-button">
+                            <button class="home-icon" id="modalrestart"><a href="game.html"><i class="fas fa-redo"></i></a></button>
+                        </div>
                     </div>
-                    <div class="home-button">
-                        <button class="home-icon" id="modalrestart"><a href="game.html"><i class="fas fa-redo"></i></a></button>
-                    </div>
-                    <p>You have finished the game! Your score is <span id="end-modal-score"></span>.</p>
                 </div>
             </div>
         </div>
         <nav class="nav-bar">
             <div class="stats">
                 <div class="nav-item">
-                    <div id="timer">30</div>
-                    <div>&nbsp;seconds remaining</div>
+                    <div class="stats-text" id="timer">30</div>
+                    <div class="stats-text">&nbsp;seconds remaining</div>
                 </div>
+                <br>
                 <div class="nav-score">
-                    <div id="scoreCount">0</div>
-                    <div>&nbsp;zombies zapped</div>
+                    <div class="stats-text"id="scoreCount">0</div>
+                    <div class="stats-text">&nbsp;zombies whacked</div>
                 </div>
-<!--                <button onclick="startGame()">Go!</button> button tests countdown timer function-->
             </div>
             <div class="instruction-content">
-                <p>How to play</p>
-                <ol>
-                    <li>Zombies will rise from the dead,</li>
-                    <li>Use your tool to whack them on the head!</li>
-                    <li>You have 30 seconds on the clock,</li>
-                    <li>To make the zombie apocalypse stop!</li>
-                </ol>
+                <p>Zombies will rise from the dead,</p>
+                <p>Use your tool to whack them on the head!</p>
+                <p>You have 30 seconds on the clock,</p>
+                <p>To make the zombie apocalypse stop!</p>
             </div>
             <div class="instruction-buttons">
                 <button class="instruction-button info-circle"><i class="fas fa-info-circle"></i></button>
@@ -57,28 +64,28 @@
 
         <main class="game-area">
             <div class="grid-item">
-                <img class="gravestone" src="images/gravestone1.png">
-                <img class="zombie-sprite" src="images/zombie1.png">
+                <img class="zombie-sprite" src="images/zombie1.png" draggable="false">
+                <img class="gravestone" src="images/gravestone1.png" draggable="false">
             </div>
             <div class="grid-item">
-                <img class="gravestone" src="images/gravestone4.png">
-                <img class="zombie-sprite" src="images/zombie1.png">
+                <img class="zombie-sprite" src="images/zombie2.png" draggable="false">
+                <img class="gravestone" src="images/gravestone4.png" draggable="false">
             </div>
             <div class="grid-item">
-                <img class="gravestone" src="images/gravestone2.png">
-                <img class="zombie-sprite" src="images/zombie1.png">
+                <img class="zombie-sprite" src="images/zombie3.png" draggable="false">
+                <img class="gravestone" src="images/gravestone2.png" draggable="false">
             </div>
             <div class="grid-item">
-                <img class="gravestone" src="images/gravestone2.png">
-                <img class="zombie-sprite" src="images/zombie1.png">
+                <img class="zombie-sprite" src="images/zombie4.png" draggable="false">
+                <img class="gravestone" src="images/gravestone2.png" draggable="false">
             </div>
             <div class="grid-item">
-                <img class="gravestone" src="images/gravestone3.png">
-                <img class="zombie-sprite" src="images/zombie1.png">
+                <img class="zombie-sprite" src="images/zombie5.png" draggable="false">
+                <img class="gravestone" src="images/gravestone3.png" draggable="false">
             </div>
             <div class="grid-item">
-                <img class="gravestone" src="images/gravestone4.png">
-                <img class="zombie-sprite" src="images/zombie1.png">
+                <img class="zombie-sprite" src="images/zombie6.png" draggable="false">
+                <img class="gravestone" src="images/gravestone4.png" draggable="false">
             </div>
         </main>
 
