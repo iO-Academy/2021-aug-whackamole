@@ -1,18 +1,23 @@
+/**
+ * Define score and timer vars.
+ */
+let score = 0;
+const scoreBoard = document.querySelector('#scoreCount');
+let timer;
+let timeLeft = 30; // seconds
+let zombieAppear;
+let countdown;
+let countdownTime = 6;
 
 /**
  * Hide zombie on click.
  */
-
 const allZombies = document.querySelectorAll('.zombie-sprite');
 
 $('.zombie-sprite').on('click', function () {
     $(this).css('display', 'none');
     addToScore();
 });
-
-let score = 0;
-
-const scoreBoard = document.querySelector('#scoreCount');
 
 /**
  * Adds 1 to the score
@@ -60,7 +65,9 @@ function popupZombie() {
     }
 }
 
-//Instructions pop-out icon in game.html:
+/**
+ * Instructions pop-out icon in game.html
+ */
 $(document).ready(function () {
     $(".instruction-content").css('display', 'none');
     $(".window-close").hide();
@@ -73,12 +80,6 @@ $(document).ready(function () {
     });
 });
 
-// 30 second timer
-let timer;
-let timeLeft = 30; // seconds
-
-let zombieAppear;
-
 /**
  * Start Game Function
  */
@@ -88,8 +89,9 @@ let zombieAppear;
     zombieAppear = setInterval(popupZombie, 1500);
 }
 
-// decrements time left by one if time left is greater than zero.
-
+/**
+ * Decrements time left by one if time left is greater than zero.
+ */
 function updateTimer() {
     timeLeft = timeLeft - 1;
     if (timeLeft >= 0)
@@ -99,15 +101,18 @@ function updateTimer() {
     }
 }
 
+/**
+ * Clean up intervals and show end modal.
+ */
 function endGame() {
     clearInterval(timer);
     clearInterval(zombieAppear);
     showEndModal();
 }
 
-let countdown;
-let countdownTime = 6; // seconds
-// decrements time left by one if time left is greater than zero.
+/**
+ * Decrements time left by one if time left is greater than zero.
+ */
 function updateCountdown() {
     countdownTime = countdownTime - 1;
     if (countdownTime >= 1)
@@ -120,14 +125,18 @@ function updateCountdown() {
     }
 }
 
-// Function to show modal with game start countdown
+/**
+ * Function to show modal with game start countdown.
+ */
 function showStartModal() {
     const startModal = document.querySelector('#start-modal');
     startModal.style.display = 'block';
     countdown = setInterval(updateCountdown, 1000);
 }
 
-// Function to show modal at game end.
+/**
+ * Function to show modal at game end.
+ */
 function showEndModal() {
     const endModal = document.querySelector('#end-modal');
     const endModalScore = document.querySelector('#end-modal-score');
@@ -135,8 +144,9 @@ function showEndModal() {
     endModalScore.innerText = score;
 }
 
-// Triggers startGame() function on page load:
-
+/**
+ * Triggers startGame() function on page load:
+ */
 $(document).ready(function() {
     showStartModal();
 });
