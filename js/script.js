@@ -10,6 +10,7 @@ let countdown;
 let countdownTime = 6;
 let hitSound = new sound("sounds/Splat.mp3");
 let zombieSound = new sound("sounds/zombie02.mp3");
+let backgroundSound = new sound("sounds/Tension Loop.wav");
 let timeoutSpeed = 2000;
 let appearSpeed = 1500;
 
@@ -91,6 +92,7 @@ $(document).ready(function () {
  */
 function startGame() {
     resetGame();
+    backgroundSound.play();
     timer = setInterval(updateTimer, 1000);
     zombieAppear = setInterval(popupZombie, appearSpeed);
 }
