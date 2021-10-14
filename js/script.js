@@ -8,6 +8,8 @@ let timeLeft = 30; // seconds
 let zombieAppear;
 let countdown;
 let countdownTime = 6;
+let timeoutSpeed = 2000;
+let appearSpeed = 1500;
 
 /**
  * Hide zombie on click.
@@ -61,7 +63,7 @@ function popupZombie() {
 
         setTimeout(function () {
             zombie.style.display = 'none';
-        }, 2000);
+        }, timeoutSpeed);
     }
 }
 
@@ -83,10 +85,10 @@ $(document).ready(function () {
 /**
  * Start Game Function
  */
- function startGame() {
+function startGame() {
     resetGame();
     timer = setInterval(updateTimer, 1000);
-    zombieAppear = setInterval(popupZombie, 1500);
+    zombieAppear = setInterval(popupZombie, appearSpeed);
 }
 
 /**
@@ -152,6 +154,14 @@ function showEndModal() {
 /**
  * Triggers showStartModal() function on page load:
  */
-$(document).ready(function() {
+$(document).ready(function(ev) {
+    // retrieve mode parameter from URL
+    const url = new URL(window.location);
+    const mode = url.searchParams.get("m");
+
+    // adjust difficulty parameters
+    timeoutSpeed = (mode == 'hard') ? 1000 : 2000;
+    appearSpeed = (mode == 'hard') ? 1000 : 1500;
+
     showStartModal();
 });
