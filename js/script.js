@@ -4,7 +4,7 @@
 let score = 0;
 const scoreBoard = document.querySelector('#scoreCount');
 let timer;
-let timeLeft = 3; // seconds
+let timeLeft = 30; // seconds
 let zombieAppear;
 let countdown;
 let countdownTime = 6;
