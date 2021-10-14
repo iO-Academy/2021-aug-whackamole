@@ -85,7 +85,7 @@ $(document).ready(function () {
 /**
  * Start Game Function
  */
- function startGame() {
+function startGame() {
     resetGame();
     timer = setInterval(updateTimer, 1000);
     zombieAppear = setInterval(popupZombie, appearSpeed);
