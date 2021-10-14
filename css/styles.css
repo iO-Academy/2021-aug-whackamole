@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&display=swap');
 
 * {
     box-sizing: border-box;
-    font-size: 22px;
+    font-size: 16px;
 }
 
 body {
     background-color: #0D065E;
     color: #FFFFFF;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'IM Fell English SC', serif;
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -20,11 +20,16 @@ body {
 
 h1 {
     font-family: 'Creepster', cursive;
-    font-size: 7rem;
+    font-size: 6rem;
 }
 
 h2 {
     font-family: 'Creepster', cursive;
+}
+
+h3 {
+    margin: 0 0 0.25rem;
+    color: #CCCCCC;
 }
 
 a {
@@ -45,15 +50,41 @@ a {
 .header {
     color: #880808;
     display: flex;
-    /* padding: 1rem; */
+}
+
+.landing-area {
+    background-image: url("../images/graveyard.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+    color: #880808;
+}
+
+.instruct-and-play {
+    padding-top: 10rem;
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    width: 70vw;
 }
 
 .instructions {
     align-items: center;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
     width: 35vw;
+}
+
+.instructions p {
+    margin: 0;
 }
 
 .launch {
@@ -115,10 +146,13 @@ button {
 }
 
 .instruction-content {
-    font-size: 1rem;
-    /* font-weight: lighter; */
     justify-self: right;
-    color: #880808;
+}
+
+.instruction-content p {
+    font-size: 1rem;
+    color: #CCCCCC;
+    margin: 0;
 }
 
 .instruction-buttons {
@@ -138,6 +172,11 @@ button {
     color: #FFFFFF;
 }
 
+i {
+    font-size: 2rem;
+    color: #CCCCCC;
+}
+
 i:hover {
     color: #880808;
 }
@@ -152,32 +191,15 @@ i:hover {
     background-size: cover;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 3rem;
     justify-items: center;
     align-items: center;
     height: 80vh;
-    color: #880808;
-}
-
-.landing-area {
-    background-image: url("../images/graveyard.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    padding: 3rem;
-    justify-items: center;
-    align-items: center;
-    height: 80vh;
-    width: 100vw;
     color: #880808;
 }
 
 .grid-item {
-    height: 200px;
     margin: 2rem 6rem;
     text-align: center;
-    width: 200px;
     position: relative;
 }
 
@@ -191,7 +213,7 @@ i:hover {
     height: 10rem;
     width: auto;
     position: absolute;
-    left: 3rem;
+    left: 4rem;
     top: 3rem;
 }
 

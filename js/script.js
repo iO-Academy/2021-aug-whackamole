@@ -104,11 +104,11 @@ function updateTimer() {
 /**
  * Clean up intervals and show end modal.
  */
-function endGame() {
-    clearInterval(timer);
-    clearInterval(zombieAppear);
-    showEndModal();
-}
+// function endGame() {
+//     clearInterval(timer);
+//     clearInterval(zombieAppear);
+//     showEndModal();
+// }
 
 /**
  * Decrements time left by one if time left is greater than zero.
@@ -128,11 +128,11 @@ function updateCountdown() {
 /**
  * Function to show modal with game start countdown.
  */
-function showStartModal() {
-    const startModal = document.querySelector('#start-modal');
-    startModal.style.display = 'block';
-    countdown = setInterval(updateCountdown, 1000);
-}
+// function showStartModal() {
+//     const startModal = document.querySelector('#start-modal');
+//     startModal.style.display = 'block';
+//     countdown = setInterval(updateCountdown, 1000);
+// }
 
 /**
  * Function to show modal at game end.
