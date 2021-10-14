@@ -20,11 +20,13 @@ body {
 
 h1 {
     font-family: 'Creepster', cursive;
-    font-size: 6rem;
+    font-size: 8rem;
+    text-shadow: 7px 7px #000000;
 }
 
 h2 {
     font-family: 'Creepster', cursive;
+    text-shadow: 5px 5px #000000;
 }
 
 h3 {
@@ -33,7 +35,7 @@ h3 {
 }
 
 a {
-    color: #FFFFFF;
+    color: #CCCCCC;
     text-decoration: none;
 }
 
@@ -56,10 +58,10 @@ a {
     background-image: url("../images/graveyard.png");
     background-repeat: no-repeat;
     background-size: cover;
-    display: flex;
-    flex-direction: column;
-    padding: 3rem;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    padding: 30vh 10vw 3vh;
     justify-items: center;
     align-items: center;
     height: 80vh;
@@ -67,39 +69,35 @@ a {
     color: #880808;
 }
 
-.instruct-and-play {
-    padding-top: 10rem;
-    display: flex;
-    justify-content: space-between;
-    justify-items: center;
-    align-items: center;
-    width: 70vw;
-}
-
 .instructions {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    width: 35vw;
+    grid-column: 1 / 2;
+    color: #CCCCCC;
 }
 
 .instructions p {
     margin: 0;
+    text-align: center;
+    font-size: 1.5rem;
 }
 
-.launch {
+.game-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.launch-buttons {
     background-color: #880808;
-    color: #FFFFFF;
+    color: #CCCCCC;
     border-radius: 150px;
     font-size: 2rem;
     padding: 1rem 2rem;
     font-family: 'Creepster', cursive;
-    border-color: #053D09;
 }
 
-.launch:hover {
-    background-color: #000000;
-    color: #053D09;
+.launch-buttons:hover {
+    color: #FEBD59;
   }
 
 .background {
@@ -114,12 +112,16 @@ a {
 
 footer {
     padding: 1rem;
+    grid-column: 1 / -1;
+    align-self: end;
 }
 
 /* Game Page Styling */
 
 button {
     cursor: pointer;
+    border: none;
+    outline: none;
 }
 
 .nav-bar {
@@ -151,7 +153,7 @@ button {
 
 .instruction-content p {
     font-size: 1rem;
-    color: #CCCCCC;
+    color: #880808;
     margin: 0;
 }
 
@@ -195,6 +197,11 @@ i:hover {
     align-items: center;
     height: 80vh;
     color: #880808;
+    cursor: url('../assets/cursor/spade2.png'), auto;
+}
+
+.game-area:active {
+    cursor: url('../assets/cursor/spade3.png'), auto;
 }
 
 .grid-item {
@@ -235,7 +242,16 @@ i:hover {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 50%; /* Could be more or less, depending on screen size */
+    font-size: 3rem;
+}
+
+.end-modal-content p {
+    font-size: 3rem;
+}
+
+span {
+    font-size: 3rem;
 }
 
 #start-modal {
@@ -247,19 +263,28 @@ i:hover {
     width: 100%; /* Full width */
     height: 100%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
-    background-color: #000000; /* Fallback color */
+    background-color: #00000050; /* Fallback color */
 }
 
 .start-modal-content {
     background-color: #000000;
-    color: #FFFFFF;
+    color: #880808;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 50%; /* Could be more or less, depending on screen size */
     font-family: 'Creepster', cursive;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+}
+
+.start-modal-content p {
+    font-size: 5rem;
+}
+
+.restart-buttons {
+    display: flex;
+    width: 80%; /* Could be more or less, depending on screen size */
 }
 
 .modalicons, #modalhome, #modalrestart {
