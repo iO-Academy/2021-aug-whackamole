@@ -1,5 +1,5 @@
 /**
- * Define score and timer vars.
+ * Define score, timer and sound effect vars.
  */
 let score = 0;
 const scoreBoard = document.querySelector('#scoreCount');
@@ -8,6 +8,10 @@ let timeLeft = 30; // seconds
 let zombieAppear;
 let countdown;
 let countdownTime = 6;
+let hitSound = new sound("sounds/Splat.mp3");
+let zombieSound = new sound("sounds/zombie02.mp3");
+let timeoutSpeed = 2000;
+let appearSpeed = 1500;
 
 /**
  * Hide zombie on click.
@@ -15,6 +19,7 @@ let countdownTime = 6;
 const allZombies = document.querySelectorAll('.zombie-sprite');
 
 $('.zombie-sprite').on('click', function () {
+    hitSound.play();
     $(this).css('display', 'none');
     addToScore();
 });
@@ -57,11 +62,12 @@ function popupZombie() {
     // check if not already up
     if (zombie.style.display === 'none') {
 
+        zombieSound.play();
         zombie.style.display = 'initial';
 
         setTimeout(function () {
             zombie.style.display = 'none';
-        }, 2000);
+        }, timeoutSpeed);
     }
 }
 
@@ -83,10 +89,10 @@ $(document).ready(function () {
 /**
  * Start Game Function
  */
- function startGame() {
+function startGame() {
     resetGame();
     timer = setInterval(updateTimer, 1000);
-    zombieAppear = setInterval(popupZombie, 1500);
+    zombieAppear = setInterval(popupZombie, appearSpeed);
 }
 
 /**
@@ -152,6 +158,32 @@ function showEndModal() {
 /**
  * Triggers showStartModal() function on page load:
  */
-$(document).ready(function() {
+$(document).ready(function(ev) {
+    // retrieve mode parameter from URL
+    const url = new URL(window.location);
+    const mode = url.searchParams.get("m");
+
+    // adjust difficulty parameters
+    timeoutSpeed = (mode == 'hard') ? 1100 : 2000;
+    appearSpeed = (mode == 'hard') ? 1000 : 1500;
+
     showStartModal();
 });
+
+/**
+ * Function to play sound effects:
+ */
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }
+}

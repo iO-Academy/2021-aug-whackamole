@@ -197,7 +197,11 @@ i:hover {
     align-items: center;
     height: 80vh;
     color: #880808;
-    cursor: url('../assets/cursor/spade.png'), auto;
+    cursor: url('../assets/cursor/spade2.png'), auto;
+}
+
+.game-area:active {
+    cursor: url('../assets/cursor/spade3.png'), auto;
 }
 
 .grid-item {
@@ -280,7 +284,6 @@ span {
 
 .restart-buttons {
     display: flex;
-    border: 1px solid #888888;
     width: 80%; /* Could be more or less, depending on screen size */
 }
 
