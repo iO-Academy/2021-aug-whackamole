@@ -33,7 +33,7 @@ h3 {
 }
 
 a {
-    color: #FFFFFF;
+    color: #CCCCCC;
     text-decoration: none;
 }
 
@@ -56,10 +56,10 @@ a {
     background-image: url("../images/graveyard.png");
     background-repeat: no-repeat;
     background-size: cover;
-    display: flex;
-    flex-direction: column;
-    padding: 3rem;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    padding: 30vh 10vw 3vh;
     justify-items: center;
     align-items: center;
     height: 80vh;
@@ -67,39 +67,35 @@ a {
     color: #880808;
 }
 
-.instruct-and-play {
-    padding-top: 10rem;
-    display: flex;
-    justify-content: space-between;
-    justify-items: center;
-    align-items: center;
-    width: 70vw;
-}
-
 .instructions {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    width: 35vw;
+    grid-column: 1 / 2;
+    color: #CCCCCC;
 }
 
 .instructions p {
     margin: 0;
+    text-align: center;
+    font-size: 1.5rem;
 }
 
-.launch {
+.game-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.launch-buttons {
     background-color: #880808;
-    color: #FFFFFF;
+    color: #CCCCCC;
     border-radius: 150px;
     font-size: 2rem;
     padding: 1rem 2rem;
     font-family: 'Creepster', cursive;
-    border-color: #053D09;
 }
 
-.launch:hover {
-    background-color: #000000;
-    color: #053D09;
+.launch-buttons:hover {
+    color: #FEBD59;
   }
 
 .background {
@@ -114,12 +110,16 @@ a {
 
 footer {
     padding: 1rem;
+    grid-column: 1 / -1;
+    align-self: end;
 }
 
 /* Game Page Styling */
 
 button {
     cursor: pointer;
+    border: none;
+    outline: none;
 }
 
 .nav-bar {
