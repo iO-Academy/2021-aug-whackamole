@@ -197,6 +197,7 @@ i:hover {
     align-items: center;
     height: 80vh;
     color: #880808;
+    cursor: url('../assets/cursor/spade.png'), auto;
 }
 
 .grid-item {
