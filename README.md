@@ -1,4 +1,4 @@
-# 2021 August Agile Aardvarks Whack-a-Zombie
+# 2021 August Agile Aardvarks Zap-a-Zombie
 
 JavaScript game.
 
@@ -42,3 +42,4 @@ https://pngtree.com/freepng/halloween-scary-grave-party-element-with-r-i-p-sign-
 Ref:
 PNGs Designed By iftikharalam
 ------------------------------------------------------------------
+Favicon made by Freepik from https://www.flaticon.com/
