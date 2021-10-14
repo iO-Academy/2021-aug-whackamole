@@ -105,16 +105,38 @@ function endGame() {
     showEndModal();
 }
 
+let countdown;
+let countdownTime = 6; // seconds
+// decrements time left by one if time left is greater than zero.
+function updateCountdown() {
+    countdownTime = countdownTime - 1;
+    if (countdownTime >= 1)
+        $('#start-modal-countdown').html(countdownTime);
+    else {
+        clearInterval(countdown);
+        const startModal = document.querySelector('#start-modal');
+        startModal.style.display = 'none';
+        startGame();
+    }
+}
+
+// Function to show modal with game start countdown
+function showStartModal() {
+    const startModal = document.querySelector('#start-modal');
+    startModal.style.display = 'block';
+    countdown = setInterval(updateCountdown, 1000);
+}
+
 // Function to show modal at game end.
 function showEndModal() {
     const endModal = document.querySelector('#end-modal');
     const endModalScore = document.querySelector('#end-modal-score');
     endModal.style.display = 'block';
     endModalScore.innerText = score;
-
 }
+
 // Triggers startGame() function on page load:
 
 $(document).ready(function() {
-    startGame();
+    showStartModal();
 });
